@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,400,900&display=swap');
+
+:root {
+  /*colors*/
+  --primary-color: #212127;
+  --secondary-color: #fa4a3d;
+  --tertiary-color: #855b69;
+  --quadrary-color: #ddadac;
+  --quinary-color: #fdd5b1;
+
+  --white-color: #fff;
+  --warmBlack-color: #100f0f;
+  --coldBlack-color: #0a0a1d;
+  --warmGrey-color: #eaeaff;
+  --action-color: #5656fe;
+
+  /*modular scale: 1.200 -- minor third, base size 16px */
+  --ms-15: 15.407em; /*246.51px*/
+  --ms-14: 12.839em; /*205.43px*/
+  --ms-13: 10.699em; /*171.19px*/
+  --ms-12: 8.916em; /*142.66px*/
+  --ms-11: 7.43em; /*118.88px*/
+  --ms-10: 6.192em; /*99.07px*/
+  --ms-9: 5.16em; /*82.56px*/
+  --ms-8: 4.3em; /*68.80px*/
+  --ms-7: 3.583em; /*57.33px*/
+  --ms-6: 2.986em; /*47.78px*/
+  --ms-5: 2.488em; /*39.81px*/
+  --ms-4: 2.074em; /*33.18px*/
+  --ms-3: 1.728em; /*27.65px*/
+  --ms-2: 1.44em; /*23.04px*/
+  --ms-1: 1.2em; /*19.20px*/
+  --ms-0: 1em; /*16px*/
+  --ms-n1: 0.833em; /*13.33px*/
+  --ms-n2: 0.694em; /*11.11px*/
+  --ms-n3: 0.579em; /*9.26px*/
+  --ms-n4: 0.482em; /*7.72px*/
+  --ms-n5: 0.402em; /*6.43px*/
+  --ms-n6: 0.335em; /*5.36px*/
+  --ms-n7: 0.279em; /*4.47px*/
+  --ms-n8: 0.233em; /*3.72px*/
+  --ms-n9: 0.194em; /*3.10px*/
+  --ms-n10: 0.162em; /*2.58px*/
+
+  /*fonts*/
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Roboto Slab', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /*typography*/
+  --lineHeight-body: 1.65;
+  --lineHeight-header: 1.15;
+
+  /*misc*/
+  --border-radius: 0.233rem;
+}
+
+/********************************
+** General STYLES
+*******************************/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  margin: 0;
+  font-weight: 400;
+  line-height: var(--lineHeight-body);
+  background: var(--coldBlack-color);
+  color: var(--white-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  /*width: 80vw;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/********************************
+** Typography STYLES
+*******************************/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+caption,
+blockquote {
+  font-family: var(--font-sans);
+  color: var(--white-color);
+  font-weight: 900;
+  line-height: var(--lineHeight-header);
+  margin: 2.75rem 0 1.05rem;
+}
+
+p {
+  margin-bottom: 1.15rem;
+  font-weight: 400;
+  font-size: var(--ms-0);
+  line-height: var(--lineHeight-body);
+}
+h1 {
+  margin-top: 0;
+  font-size: var(--ms-5);
+}
+
+h2 {
+  font-size: var(--ms-4);
+}
+
+h3 {
+  font-size: var(--ms-3);
+}
+
+h4 {
+  font-size: var(--ms-2);
+}
+
+h5 {
+  font-size: var(--ms-1);
+}
+
+small,
+.text_small {
+  font-size: var(--ms-1n);
+}
+
+/********************************
+** Form STYLES
+*******************************/
+input,
+button {
+  border: 1px solid var(--warmGrey-color);
+  border-radius: var(--border-radius);
+  font-size: var(--ms-1n);
+  padding: var(--ms-n4) var(--ms-n3);
+  margin: 0;
+  background: var(--action-color);
+  color: var(--white-color);
+}
+input[type='text'] {
+  width: 20em;
+  border-top-right-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+  background: var(--white-color);
+  color: var(--warmBlack-color);
+}
+
+/********************************
+** component STYLES
+*******************************/
+.movie-container {
+  margin: 20px 0;
+}
+
+.movie-container select {
+  background-color: var(--white-color);
+  border: 0;
+  border-radius: var(--ms-n6);
+  font-size: var(--ms-n1);
+  margin-left: var(--ms-n3);
+  padding: var(--ms-0) var(--ms-n6);
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.seat {
+  background-color: var(--primary-color);
+  height: var(--ms-n1);
+  width: var(--ms-0);
+  margin: var(--ms-n8);
+  border-top-left-radius: var(--ms-n6);
+  border-top-right-radius: var(--ms-n6);
+}
+.seat.selected {
+  background-color: var(--secondary-color);
+}
+.seat.occupied {
+  background-color: var(--quadrary-color);
+}
+.seat:nth-of-type(2) {
+  margin-right: var(--ms-1);
+}
+
+.seat:nth-last-of-type(2) {
+  margin-left: var(--ms-1);
+}
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.showcase {
+  background-color: #00000022;
+  padding: var(--ms-n6) var(--ms-n3);
+  border-radius: var(--ms-n6);
+  color: var(--warmGrey-color);
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 var(--ms-n3);
+}
+
+.showcase li small {
+  margin-left: var(--ms-n10);
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.screen {
+  background-color: var(--white-color);
+  height: var(--ms-8);
+  width: 100%;
+  margin: var(--ms-0) 0;
+  transform: rotateX(-45deg);
+  box-shadow: 0 var(--ms-n8) var(--ms-n2) #ffffff66;
+}
+
+.container {
+  perspective: 1000px;
+  margin-bottom: var(--ms-3);
+}
+
+p.text {
+  margin: var(--ms-n6) 0;
+}
+
+p.text span {
+  color: var(--secondary-color);
+}
+
+/********************************
+** Responsive STYLES
+*******************************/
+
+@media screen and (min-width: 0px) and (max-width: 500px) {
+  input[type='text'] {
+    width: 100%;
+  }
+  .meals {
+    grid-template-columns: 1fr;
+  }
+  .meal {
+    height: 300px;
+    width: 300px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .meals {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .meal {
+    height: 200px;
+    width: 200px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .meals {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 960px) {
+  html {
+    font-size: 18px;
+  }
+  .meals {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+  .meals {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 24px;
+  }
+  .meals {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
